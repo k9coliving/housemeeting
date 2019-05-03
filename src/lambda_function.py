@@ -3,6 +3,7 @@ import json
 import os
 import requests
 
+SLACK_HOOK_URL = "HouseMeetingHook"
 
 def lambda_handler(event, context):
     when = datetime.datetime.strptime(event['time'],'%Y-%m-%dT%H:%M:%SZ')
@@ -37,4 +38,4 @@ def scheduleForDayIsCorrect(hmDateTime):
     return (isWeekend and hmDateTime.hour == 14) or (not isWeekend and hmDateTime.hour == 19)
 
 def hookWithSlackBot(message):
-    r = requests.post(os.environ['HouseMeetingHook'], json=message)
+    r = requests.post(os.environ[SLACK_HOOK_URL], json=message)

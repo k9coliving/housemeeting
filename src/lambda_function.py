@@ -21,7 +21,7 @@ def announceUpcommingHouseMeeting(hmDateTime):
     hookWithSlackBot({
         "text": """Dear <!channel>
 
-We will have the house meeting this Saturday the {} at {}
+We will have the house meeting this {} at {}
 
 Feel free to add topics and proposals you'd like to discuss in the common agenda here:
 https://docs.google.com/document/d/1rtIzrTK3MugLD7A1r7w5Xmu8ebzJNPH-Vi6cGEsP6fY/edit#
